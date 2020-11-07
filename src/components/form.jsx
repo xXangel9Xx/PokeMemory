@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import '../assets/form.scss'
+//import '../assets/form.scss'
 const Form = (props) => {
 
     return (

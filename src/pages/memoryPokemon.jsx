@@ -1,10 +1,41 @@
 import React, {useState,useEffect} from 'react';
 import Board from '../components/board'
 const MemoryPokemon = () =>{
+    const [arrayPokemons,setArrayPokemons] = useState([]);
+    
+    
+    
+    useEffect(()=>{
+        let random 
+        for(let i = 0; i <= 5; i-=-1){
+           random = Math.floor(Math.random() * 6)+1
+            if (arrayPokemons.includes(random)) {
+                i--
+            }else{
+                arrayPokemons[i] =  random               
+            };
+        }
+        let shuffle = []
+        let cartShuffle = []
+            for(let i = 0; i <= arrayPokemons.length-1; i-=-1) {
+                random = Math.floor(Math.random() * arrayPokemons.length)
+                if(shuffle.includes(random)) {
+                    i--
+                }else{
+                    shuffle[i] = random
+                    cartShuffle[i] = arrayPokemons[random]
+                }
+            }
+            cartShuffle = arrayPokemons.concat(cartShuffle)
+            console.log(cartShuffle)
+            setArrayPokemons(cartShuffle)
+            
+    },[])
+
     return (
         <div className="memoryPokemon-container">
             <Board />
         </div>
-    )
-}
+    );
+};
 export default MemoryPokemon
