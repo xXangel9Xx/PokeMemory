@@ -1,5 +1,6 @@
 import React, {useEstate,useEffect} from 'react';
-const Letters = () =>{
+import '../assets/letters.scss'
+const Letters = (props) =>{
     return (
         <div className="container-letters">
 

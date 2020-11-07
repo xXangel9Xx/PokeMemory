@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from 'react';
+import '../assets/board.scss'
 import Letters from './letters'
 import Table from './table'
 import Form from './form'

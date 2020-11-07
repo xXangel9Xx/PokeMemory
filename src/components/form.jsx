@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react';
-const Form = () => {
+import '../assets/form.scss'
+const Form = (props) => {
 
     return (
         <div className="container-form">

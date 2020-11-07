@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react';
-const Table = () =>{
+import '../assets/table.scss'
+const Table = (props) =>{
     return (
         <div className="container-table">
 
