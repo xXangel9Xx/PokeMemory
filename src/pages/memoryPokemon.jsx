@@ -7,6 +7,7 @@ const MemoryPokemon = () =>{
     
     useEffect(()=>{
         let random 
+        //array item unic
         for(let i = 0; i <= 5; i-=-1){
            random = Math.floor(Math.random() * 6)+1
             if (arrayPokemons.includes(random)) {
@@ -15,6 +16,7 @@ const MemoryPokemon = () =>{
                 arrayPokemons[i] =  random               
             };
         }
+        //shuffle array
         let shuffle = []
         let cartShuffle = []
             for(let i = 0; i <= arrayPokemons.length-1; i-=-1) {
@@ -26,10 +28,10 @@ const MemoryPokemon = () =>{
                     cartShuffle[i] = arrayPokemons[random]
                 }
             }
+        //save array
             cartShuffle = arrayPokemons.concat(cartShuffle)
             console.log(cartShuffle)
             setArrayPokemons(cartShuffle)
-            
     },[])
 
     return (
