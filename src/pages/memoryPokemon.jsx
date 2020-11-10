@@ -30,13 +30,15 @@ const MemoryPokemon = () =>{
             }
         //save array
             cartShuffle = arrayPokemons.concat(cartShuffle)
-            console.log(cartShuffle)
             setArrayPokemons(cartShuffle)
     },[])
 
+
     return (
         <div className="memoryPokemon-container">
-            <Board />
+            <Board
+                arrayPokemons={arrayPokemons}
+            />
         </div>
     );
 };

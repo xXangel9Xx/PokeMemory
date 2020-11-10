@@ -4,11 +4,17 @@ import Letters from './letters'
 import Table from './table'
 import Form from './form'
 
-const Board = () => {
+const Board = (props) => {
 
     return(
         <div className="container-board">
-            <p className="hola">hola </p>
+
+            <div className="container-image-game-memory">
+                <Letters  
+                    arrayPokemons={props.arrayPokemons}
+                />
+            </div>
+
         </div>
     )
 
