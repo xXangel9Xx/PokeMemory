@@ -2,9 +2,12 @@ import React, {useState,useEffect} from 'react';
 import Board from '../components/board'
 const MemoryPokemon = () =>{
     const [arrayPokemons,setArrayPokemons] = useState([]);
-    
-    
-    
+    const [showLetters,setShowLetters] = useState(new Array(12).fill(false))
+    const [compareLetters,setCompareLetters] = useState([])
+
+   // const [showLetter1,setShowLetter1] = useState(new Array(6).fill(false));
+   // const [showLetter2,setShowLetter2] = useState(new Array(6).fill(false));
+
     useEffect(()=>{
         let random 
         //array item unic
@@ -34,10 +37,47 @@ const MemoryPokemon = () =>{
     },[])
 
 
+    function showLettersfunction(showLetters,setShowLetters,compareLetters,setCompareLetters,idPokemon,arrayPokemons,setArrayPokemons){
+        if(!compareLetters[0]){
+            compareLetters[0] = idPokemon
+            showLetters[compareLetters[0]] = true
+          return setCompareLetters(compareLetters),setShowLetters(showLetters)
+            
+        }else if(compareLetters[0]){
+            compareLetters[1] = idPokemon
+            showLetters[compareLetters[1]] = true
+           setCompareLetters([compareLetters])
+           setShowLetters(showLetters)
+        }
+            
+            
+            setTimeout(()=>{
+                if (arrayPokemons[compareLetters[0]] == arrayPokemons[compareLetters[1]]) {
+                    console.log(arrayPokemons.splice(compareLetters[0],1))      
+                    console.log(arrayPokemons.splice(compareLetters[1],1))
+                    setArrayPokemons(arrayPokemons)  
+                    showLetters.splice(compareLetters[0],1)
+                    showLetters.splice(compareLetters[1],1)
+
+                    setShowLetters(showLetters)
+                    setCompareLetters([])
+                    console.log("after "+arrayPokemons)
+                }
+            },10000)
+
+    }
+
     return (
         <div className="memoryPokemon-container">
             <Board
-                arrayPokemons={arrayPokemons}
+                arrayPokemons={arrayPokemons}            
+                showLetters={showLetters}
+                setShowLetters={setShowLetters}
+                compareLetters={compareLetters}
+                setCompareLetters={setCompareLetters}
+                showLettersfunction={showLettersfunction}
+                setArrayPokemons={setArrayPokemons}
+
             />
         </div>
     );

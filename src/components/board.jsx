@@ -12,6 +12,12 @@ const Board = (props) => {
             <div className="container-image-game-memory">
                 <Letters  
                     arrayPokemons={props.arrayPokemons}
+                    showLetters={props.showLetters}
+                    setShowLetters={props.setShowLetters}
+                    compareLetters={props.compareLetters}
+                    setCompareLetters={props.setCompareLetters}
+                    showLettersfunction={props.showLettersfunction}
+                    setArrayPokemons={props.setArrayPokemons}
                 />
             </div>
 
