@@ -5,9 +5,6 @@ const MemoryPokemon = () =>{
     const [showLetters,setShowLetters] = useState(new Array(12).fill(false))
     const [compareLetters,setCompareLetters] = useState([])
 
-   // const [showLetter1,setShowLetter1] = useState(new Array(6).fill(false));
-   // const [showLetter2,setShowLetter2] = useState(new Array(6).fill(false));
-
     useEffect(()=>{
         let random 
         //array item unic
@@ -37,6 +34,7 @@ const MemoryPokemon = () =>{
     },[])
 
 
+    
     function showLettersfunction(showLetters,setShowLetters,compareLetters,setCompareLetters,idPokemon,arrayPokemons,setArrayPokemons){
         if(!compareLetters[0]){
             compareLetters[0] = idPokemon
@@ -46,24 +44,33 @@ const MemoryPokemon = () =>{
         }else if(compareLetters[0]){
             compareLetters[1] = idPokemon
             showLetters[compareLetters[1]] = true
-           setCompareLetters([compareLetters])
-           setShowLetters(showLetters)
+           setCompareLetters(compareLetters)
+           setShowLetters([showLetters])
         }
             
             
             setTimeout(()=>{
-                if (arrayPokemons[compareLetters[0]] == arrayPokemons[compareLetters[1]]) {
-                    console.log(arrayPokemons.splice(compareLetters[0],1))      
-                    console.log(arrayPokemons.splice(compareLetters[1],1))
-                    setArrayPokemons(arrayPokemons)  
-                    showLetters.splice(compareLetters[0],1)
-                    showLetters.splice(compareLetters[1],1)
-
+                let arrayPokemonNew = []
+                if (arrayPokemons[compareLetters[0]] == arrayPokemons[compareLetters[1]] && compareLetters[0] != compareLetters[1]) {  
+                    for(let i = 0; i <= arrayPokemons.length-1;i++){
+                            if(arrayPokemons[i]!=arrayPokemons[compareLetters[0]] ){
+                                    arrayPokemonNew.push(arrayPokemons[i])
+                            }
+                    }  
+                let showLettersNew = []
+                    for(let i = 0; i <= showLetters.length-1;i++){
+                        if(showLetters[i]!=true){
+                            showLettersNew.push(showLetters[i])
+                        }
+                    }  
+                  return  setArrayPokemons(arrayPokemonNew),setShowLetters(showLettersNew),setCompareLetters([])
+                }else{
+                    showLetters[compareLetters[0]]=false
+                    showLetters[compareLetters[1]]=false
                     setShowLetters(showLetters)
                     setCompareLetters([])
-                    console.log("after "+arrayPokemons)
                 }
-            },10000)
+            },5000)
 
     }
 
