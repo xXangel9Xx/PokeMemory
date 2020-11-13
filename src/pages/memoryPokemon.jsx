@@ -2,9 +2,9 @@ import React, {useState,useEffect} from 'react';
 import Board from '../components/board'
 const MemoryPokemon = () =>{
     const [arrayPokemons,setArrayPokemons] = useState([]);
-    const [showLetters,setShowLetters] = useState(new Array(12).fill(false))
+    const [show,setShow] = useState(new Array(12).fill(null))
     const [compareLetters,setCompareLetters] = useState([])
-
+    const [time,setTime] = useState(0)
     useEffect(()=>{
         let random 
         //array item unic
@@ -35,20 +35,21 @@ const MemoryPokemon = () =>{
 
 
     
-    function showLettersfunction(showLetters,setShowLetters,compareLetters,setCompareLetters,idPokemon,arrayPokemons,setArrayPokemons){
-        if(!compareLetters[0]){
+    function showLettersfunction(show,setShow,compareLetters,setCompareLetters,idPokemon,arrayPokemons,setArrayPokemons){
+        if(compareLetters[0]!=0 && !compareLetters[0] && !compareLetters[1]){
+            console.log("este existe")
             compareLetters[0] = idPokemon
-            showLetters[compareLetters[0]] = true
-          return setCompareLetters(compareLetters),setShowLetters(showLetters)
-            
-        }else if(compareLetters[0]){
-            compareLetters[1] = idPokemon
-            showLetters[compareLetters[1]] = true
+            show[idPokemon] = true
+            console.log(compareLetters)
            setCompareLetters(compareLetters)
-           setShowLetters([showLetters])
-        }
-            
-            
+           setShow(show)
+        }else if(compareLetters[0]>=0 || compareLetters[0]){
+            compareLetters[1] = idPokemon
+            show[idPokemon] = true
+           setCompareLetters(compareLetters)      
+           setShow(show)
+        }   
+
             setTimeout(()=>{
                 let arrayPokemonNew = []
                 if (arrayPokemons[compareLetters[0]] == arrayPokemons[compareLetters[1]] && compareLetters[0] != compareLetters[1]) {  
@@ -57,20 +58,23 @@ const MemoryPokemon = () =>{
                                     arrayPokemonNew.push(arrayPokemons[i])
                             }
                     }  
-                let showLettersNew = []
-                    for(let i = 0; i <= showLetters.length-1;i++){
-                        if(showLetters[i]!=true){
-                            showLettersNew.push(showLetters[i])
+                let showNew = []
+                    for(let i = 0; i <= show.length-1;i++){
+                        if(show[i]!=true){
+                            showNew.push(show[i])
                         }
                     }  
-                  return  setArrayPokemons(arrayPokemonNew),setShowLetters(showLettersNew),setCompareLetters([])
-                }else{
-                    showLetters[compareLetters[0]]=false
-                    showLetters[compareLetters[1]]=false
-                    setShowLetters(showLetters)
+                  return  setArrayPokemons(arrayPokemonNew),setShow(showNew),setCompareLetters([])
+                }else if (arrayPokemons[compareLetters[0]] != arrayPokemons[compareLetters[1]] && compareLetters[1]){
+                    for(let i = 0; i <= show.length-1;i++){
+                        if(show[i]==true){
+                            show[i]=null
+                        }
+                    }  
+                    setShow(show)
                     setCompareLetters([])
                 }
-            },5000)
+            },3000)
 
     }
 
@@ -78,12 +82,14 @@ const MemoryPokemon = () =>{
         <div className="memoryPokemon-container">
             <Board
                 arrayPokemons={arrayPokemons}            
-                showLetters={showLetters}
-                setShowLetters={setShowLetters}
+                show={show}
+                setShow={setShow}
                 compareLetters={compareLetters}
                 setCompareLetters={setCompareLetters}
                 showLettersfunction={showLettersfunction}
                 setArrayPokemons={setArrayPokemons}
+                time={time}
+                setTime={setTime}
 
             />
         </div>
