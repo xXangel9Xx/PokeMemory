@@ -36,14 +36,13 @@ const MemoryPokemon = () =>{
 
     
     function showLettersfunction(show,setShow,compareLetters,setCompareLetters,idPokemon,arrayPokemons,setArrayPokemons){
-        if(compareLetters[0]!=0 && !compareLetters[0] && !compareLetters[1]){
-            console.log("este existe")
+        if(typeof(compareLetters[0])=="undefined" ){
             compareLetters[0] = idPokemon
             show[idPokemon] = true
             console.log(compareLetters)
            setCompareLetters(compareLetters)
            setShow(show)
-        }else if(compareLetters[0]>=0 || compareLetters[0]){
+        }else if(typeof(compareLetters[0])=="number"){
             compareLetters[1] = idPokemon
             show[idPokemon] = true
            setCompareLetters(compareLetters)      
