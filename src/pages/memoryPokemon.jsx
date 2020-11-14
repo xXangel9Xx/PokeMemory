@@ -42,7 +42,7 @@ const MemoryPokemon = () =>{
             console.log(compareLetters)
            setCompareLetters(compareLetters)
            setShow(show)
-        }else if(typeof(compareLetters[0])=="number"){
+        }else if(typeof(compareLetters[0])=="number" && typeof(compareLetters[1])=="undefined"){
             compareLetters[1] = idPokemon
             show[idPokemon] = true
            setCompareLetters(compareLetters)      
@@ -64,7 +64,7 @@ const MemoryPokemon = () =>{
                         }
                     }  
                   return  setArrayPokemons(arrayPokemonNew),setShow(showNew),setCompareLetters([])
-                }else if (arrayPokemons[compareLetters[0]] != arrayPokemons[compareLetters[1]] && compareLetters[1]){
+                }else if (arrayPokemons[compareLetters[0]] != arrayPokemons[compareLetters[1]] && typeof(compareLetters[1])=="number"){
                     for(let i = 0; i <= show.length-1;i++){
                         if(show[i]==true){
                             show[i]=null
