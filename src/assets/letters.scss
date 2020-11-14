@@ -4,6 +4,6 @@ $width-images-pokemons: 150px;
         display: flex;
         flex-wrap: wrap;
     }
-    .pokemons-image,.container-letters{width:$width-images-pokemons;}
-    
+    .pokemons-image,.container-letters{width:$width-images-pokemons;}   
 }
+@media screen and (min-width:1000px){.container-image-game-memory{width: 70%;}}

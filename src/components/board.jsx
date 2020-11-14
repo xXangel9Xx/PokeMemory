@@ -20,19 +20,27 @@ const Board = (props) => {
 
     return(
         <div className="container-board">
-            <p>{props.time}</p>
-            <div className="container-image-game-memory">
-                <Letters  
-                    arrayPokemons={props.arrayPokemons}
-                    setArrayPokemons={props.setArrayPokemons}                    
-                    show={props.show}
-                    setShow={props.setShow}
-                    compareLetters={props.compareLetters}
-                    setCompareLetters={props.setCompareLetters}
-                    showLettersfunction={props.showLettersfunction}
-
-                />
+            <div className="container-time">
+                <p className="time">{props.time}Sec..</p>                
             </div>
+            <div className="container-body-center">
+                <Table 
+                
+                />
+                <div className="container-image-game-memory">
+                    <Letters  
+                        arrayPokemons={props.arrayPokemons}
+                        setArrayPokemons={props.setArrayPokemons}                    
+                        show={props.show}
+                        setShow={props.setShow}
+                        compareLetters={props.compareLetters}
+                        setCompareLetters={props.setCompareLetters}
+                        showLettersfunction={props.showLettersfunction}
+                    />
+                </div>            
+            
+            </div>
+
 
         </div>
     )

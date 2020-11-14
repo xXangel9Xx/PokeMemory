@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from 'react';
+import '../assets/memoryPokemon.scss'
 import Board from '../components/board'
 const MemoryPokemon = () =>{
     const [arrayPokemons,setArrayPokemons] = useState([]);
