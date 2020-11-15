@@ -1,5 +1,9 @@
 @media screen and (min-width:300px){
-    .time{margin: 0%;}
+    .time{
+        margin: 0%;
+        color:white;
+        font-size: 20px;
+    }
     .container-time{    
         text-align: center;
         margin-left: auto;
@@ -8,6 +12,11 @@
     }
 }
 @media screen and (min-width:1000px){
-    .container-body-center{display: flex;
-        justify-content: space-around;}
+    .time{
+        font-size: 30px;
+    }
+    .container-body-center{
+        display: flex;
+        justify-content: space-around;
+    }
 }

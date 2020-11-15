@@ -3,7 +3,7 @@ import '../assets/table.scss'
 const Table = (props) =>{
     return (
         <div className="container-table">
-            <table>
+            <table border="1"  cellpadding="5">
                 <caption>Tabla de Posiciones</caption>
                 <thead className="table-thead">
                     <tr>
