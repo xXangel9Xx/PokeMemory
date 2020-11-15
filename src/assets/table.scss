@@ -2,5 +2,7 @@
     .container-table{display: none;}
 }
 @media screen and (min-width:1000px){
-    .container-table{display: block;}
+    .container-table{display: block;
+        margin-left: 48px;
+    }
 }

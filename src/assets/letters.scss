@@ -3,7 +3,17 @@ $width-images-pokemons: 150px;
     .container-image-game-memory{
         display: flex;
         flex-wrap: wrap;
+        overflow-y: scroll;
+        height: 90vh;
+        margin-left: 5px;
+        width: 300px;
+        margin: auto;
     }
     .pokemons-image,.container-letters{width:$width-images-pokemons;}   
 }
-@media screen and (min-width:1000px){.container-image-game-memory{width: 70%;}}
+@media screen and (min-width:1000px){
+    .container-image-game-memory{
+        width: 500px;
+    }
+
+}
