@@ -11,7 +11,7 @@ const Letters = (props) =>{
     return (
         <>
             {props.arrayPokemons.map((pokemons,i)=>
-                <div className="container-letters" key={i} id={i} onClick={(e)=>props.showLettersfunction(props.show,props.setShow,props.compareLetters,props.setCompareLetters,i,props.arrayPokemons,props.setArrayPokemons) } >
+                <div className="container-letters" key={i} id={i} onClick={(e)=>props.showLettersfunction(props.show,props.setShow,props.compareLetters,props.setCompareLetters,i,props.arrayPokemons,props.setArrayPokemons,props.setWinner) } >
                     {props.show[i]==true? <img src={"https://pokeres.bastionbot.org/images/pokemon/"+pokemons+".png"} alt="Pokemon" className="pokemons-image"/>:
                     <img src={hidden} alt="Pokemon" className="pokemons-image" />
                     }

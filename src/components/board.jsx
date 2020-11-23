@@ -36,6 +36,7 @@ const Board = (props) => {
                         compareLetters={props.compareLetters}
                         setCompareLetters={props.setCompareLetters}
                         showLettersfunction={props.showLettersfunction}
+                        setWinner={props.setWinner}
                     />
                 </div>            
             

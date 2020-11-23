@@ -5,6 +5,7 @@ const MemoryPokemon = () =>{
     const [arrayPokemons,setArrayPokemons] = useState([]);
     const [show,setShow] = useState(new Array(12).fill(null))
     const [compareLetters,setCompareLetters] = useState([])
+    const [winner,setWinner] = useState(false)
     const [time,setTime] = useState(0)
     useEffect(()=>{
         let random 
@@ -36,7 +37,7 @@ const MemoryPokemon = () =>{
 
 
     
-    function showLettersfunction(show,setShow,compareLetters,setCompareLetters,idPokemon,arrayPokemons,setArrayPokemons){
+    function showLettersfunction(show,setShow,compareLetters,setCompareLetters,idPokemon,arrayPokemons,setArrayPokemons,setWinner){
         if(typeof(compareLetters[0])=="undefined" ){
             compareLetters[0] = idPokemon
             show[idPokemon] = true
@@ -90,6 +91,8 @@ const MemoryPokemon = () =>{
                 setArrayPokemons={setArrayPokemons}
                 time={time}
                 setTime={setTime}
+                winner={winner}
+                setWinner={setWinner}
 
             />
         </div>
