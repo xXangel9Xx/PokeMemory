@@ -41,7 +41,6 @@ const MemoryPokemon = () =>{
         if(typeof(compareLetters[0])=="undefined" ){
             compareLetters[0] = idPokemon
             show[idPokemon] = true
-            console.log(compareLetters)
            setCompareLetters(compareLetters)
            setShow(show)
         }else if(typeof(compareLetters[0])=="number" && typeof(compareLetters[1])=="undefined"){
@@ -59,6 +58,10 @@ const MemoryPokemon = () =>{
                                     arrayPokemonNew.push(arrayPokemons[i])
                             }
                     }  
+                    if(arrayPokemonNew.length == 0){
+                        setWinner(true)
+                    }
+
                 let showNew = []
                     for(let i = 0; i <= show.length-1;i++){
                         if(show[i]!=true){

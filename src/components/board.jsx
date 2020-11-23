@@ -6,16 +6,20 @@ import Form from './form'
 
 const Board = (props) => {
     useEffect(()=>{
-        setTimeout(()=>{
-            let time = props.time
-            props.setTime(time+=1)
-        },1000)
+        if(props.winner == false){
+            setTimeout(()=>{
+                let time = props.time
+                props.setTime(time+=1)
+            },1000)
+        }
     },[props.time])
 
     useEffect(()=>{},[props.arrayPokemons])
     useEffect(()=>{
         console.log(props.show)
     },[props.show])
+
+
     useEffect(()=>{},[props.compareLetters])
 
     return(
@@ -24,21 +28,22 @@ const Board = (props) => {
                 <p className="time">{props.time}Sec..</p>                
             </div>
             <div className="container-body-center">
-                <Table 
-                
-                />
-                <div className="container-image-game-memory">
-                    <Letters  
-                        arrayPokemons={props.arrayPokemons}
-                        setArrayPokemons={props.setArrayPokemons}                    
-                        show={props.show}
-                        setShow={props.setShow}
-                        compareLetters={props.compareLetters}
-                        setCompareLetters={props.setCompareLetters}
-                        showLettersfunction={props.showLettersfunction}
-                        setWinner={props.setWinner}
-                    />
-                </div>            
+                <Table />
+                {props.winner?                    <div className="container-image-game-memory">
+                        <Letters  
+                            arrayPokemons={props.arrayPokemons}
+                            setArrayPokemons={props.setArrayPokemons}                    
+                            show={props.show}
+                            setShow={props.setShow}
+                            compareLetters={props.compareLetters}
+                            setCompareLetters={props.setCompareLetters}
+                            showLettersfunction={props.showLettersfunction}
+                            setWinner={props.setWinner}
+                        />
+                    </div>     :<Form time={props.time}/>
+ 
+                }
+       
             
             </div>
 
