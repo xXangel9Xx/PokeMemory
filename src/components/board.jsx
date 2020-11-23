@@ -29,7 +29,8 @@ const Board = (props) => {
             </div>
             <div className="container-body-center">
                 <Table />
-                {props.winner?                    <div className="container-image-game-memory">
+                {props.winner?<Form time={props.time}/>:
+                    <div className="container-image-game-memory">
                         <Letters  
                             arrayPokemons={props.arrayPokemons}
                             setArrayPokemons={props.setArrayPokemons}                    
@@ -40,8 +41,7 @@ const Board = (props) => {
                             showLettersfunction={props.showLettersfunction}
                             setWinner={props.setWinner}
                         />
-                    </div>     :<Form time={props.time}/>
- 
+                    </div>   
                 }
        
             

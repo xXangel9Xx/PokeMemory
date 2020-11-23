@@ -14,7 +14,7 @@ const Table = (props) =>{
                     name:doc.data().name, 
                     seconds:doc.data().seconds
                 }))
-                console.log(arrayData)
+                setPositionsTable(arrayData)
             }catch(error){
                 console.error(error)
             }  
@@ -33,6 +33,14 @@ const Table = (props) =>{
                         <th className="table-th-positions">Time</th>
                     </tr>                    
                 </thead>
+                <tbody className="table-tbody">
+                    {positionsTable.map((positions)=>{
+                        <tr className="table-tr">
+                            <td className="table-td">{positions.name}</td>
+                            <td className="table-td">{positions.seconds}</td>
+                        </tr>
+                    })}
+                </tbody>
 
             </table>
         </div>
