@@ -12,7 +12,7 @@ const Form = (props) => {
             const db = firebase.firestore()
             const data = await db.collection('positions').add({
                 name:nameForm,
-                seconds:5
+                seconds:props.time
             })
             console.log(data)
         }catch(e){

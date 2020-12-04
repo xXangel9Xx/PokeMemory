@@ -8,8 +8,7 @@ const Table = (props) =>{
         const getFirebase = async () =>{
             const db = firebase.firestore()
             try{
-                const positions = await db.collection('positions', ref=>
-                ref.orderBy('seconds','asc')).get()
+                const positions = await db.collection('positions').orderBy('seconds','asc').get()
                 const arrayData = positions.docs.map((doc)=>({
                     name:doc.data().name, 
                     seconds:doc.data().seconds
@@ -22,7 +21,7 @@ const Table = (props) =>{
         }
         getFirebase()
     },[])
-
+    useEffect(()=>{},[positionsTable])
     return (
         <div className="container-table">
             <table border="1"  cellPadding="5">
@@ -34,12 +33,12 @@ const Table = (props) =>{
                     </tr>                    
                 </thead>
                 <tbody className="table-tbody">
-                    {positionsTable.map((positions)=>{
-                        <tr className="table-tr">
-                            <td className="table-td">{positions.name}</td>
-                            <td className="table-td">{positions.seconds}</td>
+                    {positionsTable.map((datesPlayers,index)=>
+                        <tr className="table-tr" key={index}>
+                            <td className="table-td">{datesPlayers.name}</td>
+                            <td className="table-td">{datesPlayers.seconds}</td>
                         </tr>
-                    })}
+                    )}
                 </tbody>
 
             </table>
