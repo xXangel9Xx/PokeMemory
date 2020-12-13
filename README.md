@@ -1,3 +1,8 @@
+
+# How was it done ?
+   this project was carried out with the library of React
+![react](https://user-images.githubusercontent.com/58712435/102000557-0b3e8980-3cbf-11eb-84ad-249654627bad.png?raw=true "React")
+
 # What is it about?
    is a game of memory short in the which we give onclick to a card and we await the card to turn around if the card is  it is equal  then the cards will is exit.
 
