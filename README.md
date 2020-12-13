@@ -2,9 +2,16 @@
    is a game of memory short in the which we give onclick to a card and we await the card to turn around if the card is  it is equal  then the cards will is exit.
 
 # This project is responsive?
- I use, movile first, to realice this project
+   Yes how all my projects, i use, mobile first, to realize my projects.
+ 
  
 ![Poke Memory Movile](https://user-images.githubusercontent.com/58712435/102000121-4e4a2e00-3cba-11eb-90c9-7a6f16152b54.png?raw=true "Poke Memory movile")
+
+# What database you use?
+   I use a database non relational, to be more specific use Firebase
+
+![Poke Memory 1000px](https://user-images.githubusercontent.com/58712435/102000320-b7cb3c00-3cbc-11eb-8101-5e64879a5179.png?raw=true "Poke Memory 1000px")
+
 
 # Getting Started with Create React App
 
