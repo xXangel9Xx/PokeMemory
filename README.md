@@ -1,3 +1,11 @@
+# What is it about?
+   is a game of memory short in the which we give onclick to a card and we await the card to turn around if the card is  it is equal  then the cards will is exit.
+
+# This project is responsive?
+ I use, movile first, to realice this project
+ 
+![Poke Memory Movile](https://user-images.githubusercontent.com/58712435/102000121-4e4a2e00-3cba-11eb-90c9-7a6f16152b54.png?raw=true "Poke Memory movile")
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
